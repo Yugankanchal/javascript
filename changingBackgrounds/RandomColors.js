@@ -16,10 +16,14 @@ const ChangeColor = document.getElementById('Start');
 
 ChangeColor.addEventListener('click', function () {
     // console.log('start');
-    changingColor = setInterval(randombackgroundColor, 600);
+    if(!changingColor){
+        changingColor = setInterval(randombackgroundColor, 600);
+
+    }
 });
 
 document.getElementById('Stop').addEventListener('click', function () {
     clearInterval(changingColor)
+    changingColor = null;
     // console.log('end')
 })
