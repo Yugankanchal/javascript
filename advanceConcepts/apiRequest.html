@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #000f11;">
+    <div id="identity">
+        <img src="" alt="" id="profile-picture">
+        <p class="info" id="name" style="color: white;"></p>
+        <p class="info" id="followers" style="color: white"></p>
+    </div>
+</body>
+<script>
+    let requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    let imgSrc;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){ // to track it continously use onreadyStatechange
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText); // responseText recieved here is in form of string convert it into JSON format
+            imgSrc = data.avatar_url;
+            document.getElementById('profile-picture').src = imgSrc;
+            console.log(data.name);
+            document.getElementById('name').innerText = `UserName: ${data.name}`
+            document.getElementById('followers').innerText = `Followers: ${data.name}`
+
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
