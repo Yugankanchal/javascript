@@ -1,8 +1,11 @@
 #parent {
     margin-top: 3%;
     margin-left: 35%;
-    width: 22vw;
+    width: 25vw;
     height: auto;
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+    padding: 4px;
 }
 
 input {
@@ -10,22 +13,57 @@ input {
     font-size: inherit;
     background-color: inherit;
     outline: none;
+    width: 79%;
 }
 
 .same-size {
-    width: 100%;
-    background-color: lightgray;
+    width: 93%;
+    background-color: inherit;
 }
 
 #input-task {
     font-size: 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: inherit;
+
     padding: 0.3rem;
     padding-left: 1.2rem;
+    border-bottom: 1.5px solid grey;
+    background-color: lightgray;
 }
 
 button[type="submit"] {
     border: none;
+    margin-left: .3rem;
     background-color: inherit;
     font-size: inherit;
+
+}
+
+li {
+    display: flex;
+}
+
+ul i {
+    font-size: 1.5rem;
+}
+
+ul span {
+    margin-left: 1rem;
+}
+
+#cross {
+    display: none;
+}
+
+li:hover #cross {
+    display: inline;
+    margin-left: auto;
+}
+
+li {
+    font-size: 1.5rem;
+    margin-top: .7rem;
+    width: 100%;
+    font-family: monospace;
+    margin-left: -1.8rem;
 }
