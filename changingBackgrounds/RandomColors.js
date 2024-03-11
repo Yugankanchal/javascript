@@ -12,17 +12,28 @@ function randombackgroundColor() {
     document.getElementsByTagName('body')[0].style.backgroundColor = color;
 }
 let changingColor;
-const ChangeColor = document.getElementById('Start');
+const ChangeColor = document.getElementById('ball');
 
 ChangeColor.addEventListener('click', function () {
-    // console.log('start');
-    if(!changingColor){
-        changingColor = setInterval(randombackgroundColor, 600);
 
-    }
+    let target = 70;
+    let curr = 0;
+    console.log(curr);
+    let Interval = setInterval(() => {
+        curr++;
+        document.getElementById('ball').style.marginLeft = curr + '%'
+        if (curr >= target) {
+            if (!changingColor) {
+                changingColor = setInterval(randombackgroundColor, 600);
+            }
+            clearInterval(Interval);
+        };
+    }, 1)
+
+
 });
 
-document.getElementById('Stop').addEventListener('click', function () {
+document.getElementById('ball').addEventListener('click', function () {
     clearInterval(changingColor)
     changingColor = null;
     // console.log('end')
